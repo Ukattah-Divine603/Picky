@@ -15,13 +15,14 @@ header {
   display: flex;
   flex-direction: row;
   margin: 0%;
+
   z-index: 1;
   position: fixed;
   left: 0;
   right: 0;
 
   top: 0;
-  padding: 1rem;
+  padding: 0%;
   margin: 0%;
   height: auto;
   justify-content: space-between;
@@ -342,6 +343,7 @@ nav a {
   .dropdown {
     color: rgb(221, 13, 13);
     transition: 2s;
+
     position: relative;
     display: inline-block;
   }
@@ -370,12 +372,12 @@ nav a {
     text-align: center;
     top: 110%;
     transition: 2s;
-    left: -420%;
+    right: 0%;
     background-color: transparent;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(8px);
     z-index: 1000;
     height: 100vh;
     width: 100vw;

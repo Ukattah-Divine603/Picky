@@ -721,9 +721,10 @@ nav a {
     object-fit: cover;
   }
 
-  article button {
+  article a {
     width: fit-content;
-    height: 3rem;
+    height: 1rem;
+    text-decoration: none;
     padding: 1rem;
     border: 1px solid #ffffff;
     border-radius: 5px;
@@ -784,6 +785,130 @@ nav a {
     border-radius: 5px;
     border: none;
     padding: 1rem;
-    outline: none;
+    outline: 1px solid black;
+  }
+
+  footer {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Poppins;
+    width: 100lvw;
+    background-image: url(./images/abstract-blur-supermarket-department-store_1203-8782.avif);
+    animation: slide 50s infinite;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    transition: 0.5s;
+  }
+
+  footer .foot-info {
+    background-color: #000000d6;
+    aspect-ratio: 1/1;
+    justify-content: center;
+    align-items: left;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+  }
+  .first-foot-section {
+    display: block;
+    margin: 0%;
+    padding: 1rem;
+  }
+  .first-foot-section div h2 {
+    font-size: 1.5rem;
+    font-family: Fredoka;
+    color: white;
+  }
+
+  .first-foot-section div {
+    display: flex;
+    margin: 0%;
+    padding: 0%;
+    margin-left: -1rem;
+    flex-direction: row;
+    justify-content: left;
+    align-items: left;
+  }
+
+  .first-foot-section p {
+    font-family: Fredoka;
+    font-weight: 500;
+    color: white;
+    margin-top: -1rem;
+  }
+
+  .first-foot-section div img {
+    width: 4rem;
+  }
+
+  .second-foot-info {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .second-foot-info div {
+    display: block;
+  }
+
+  .second-foot-info div h5 {
+    font-size: 1.5rem;
+    font-family: Fredoka;
+    color: white;
+  }
+
+  .second-foot-info div p {
+    display: flex;
+    margin-left: -1rem;
+    flex-direction: column;
+    gap: 0;
+    margin-top: -1rem;
+  }
+
+  .second-foot-info div a {
+    text-decoration: none;
+    color: white;
+    border: none;
+    margin-top: -1rem;
+    width: fit-content;
+    height: 1rem;
+    background-color: transparent;
+  }
+
+  .second-foot-info div .shift {
+    margin-top: 1rem;
+  }
+
+  .last-info-foot-section div h5 {
+    font-size: 1.5rem;
+    font-family: Fredoka;
+    color: white;
+  }
+
+  .social-icons {
+    display: flex;
+    flex-direction: row;
+    margin-top: -1.5rem;
+  }
+
+  .facebook {
+    color: #0b43bc;
+  }
+
+  .twitter {
+    color: white;
+  }
+
+  .github {
+    color: #ffffff;
+  }
+
+  .copy {
+    font-family: Fredoka;
+    font-size: 0.5rem;
+    color: white;
+    font-weight: 500;
   }
 }

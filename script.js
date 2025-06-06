@@ -16,4 +16,4 @@ setInterval(function () {
   if (counter > 5) {
     counter = 1;
   }
-}, 4000);
+}, 10500);

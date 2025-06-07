@@ -18,13 +18,12 @@ body {
 header {
   display: flex;
   flex-direction: row;
+  background-color: #00000035;
   margin: 0%;
-
   z-index: 1;
   position: fixed;
   left: 0;
   right: 0;
-
   top: 0;
   padding: 0%;
   margin: 0%;
@@ -58,22 +57,122 @@ nav {
   gap: 1rem;
 }
 
-nav a {
-  color: rgb(255, 255, 255);
+.dropdown {
+  color: rgb(221, 13, 13);
+  transition: 2s;
 
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  padding: 10px 16px;
+  transition: 2s;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border-radius: 12px;
+  cursor: pointer;
   font-family: Fredoka;
   font-size: 1rem;
   font-weight: 500;
-  text-decoration: none;
 }
 
-.home-page {
-  display: flex;
+.dropdown-toggle svg {
+  display: none;
+}
+
+.dropdown-menu {
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  position: absolute;
+  text-align: center;
+  top: 110%;
+  transition: 2s;
+  right: 0%;
+  background-color: transparent;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  z-index: 1000;
   height: 100vh;
+  width: 100vw;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding-left: 10rem;
+  transition: 2s;
+  text-decoration: none;
+  color: #2c2c2c;
+  background: none;
+  transition: 2s;
+}
+
+.dropdown-menu a:hover {
+  background-color: #fff2dc;
+}
+
+.dropdown.open .dropdown-menu {
+  display: block;
+}
+
+.start-buttons {
+  margin-top: 10rem;
+  display: flex;
+  padding: 5rem;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.start-buttons button {
+  width: 100%;
+  background-color: transparent;
+  border: solid 2px rgb(3, 3, 3);
+  border-radius: 3rem;
+  font-family: Fredoka;
+  color: white;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+    1px 1px 0 black;
+  -webkit-text-stroke: 1px black;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 1rem;
+}
+
+.sliderr {
+  background-image: url(./images/electronics/wireless-earbuds-with-neon-cyberpunk-style-lighting_23-2151074300.avif);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100lvw;
+  gap: 1rem;
+  font-family: Poppins;
+  animation: slide 90s infinite;
+  display: flex;
+  flex-direction: column-reverse;
+  height: 100lvh;
+  transition: 2s;
+}
+
+.slid {
+  background-image: url(./images/fashion/spring-wardrobe-switch-still-life_23-2150176696.avif);
+  background-position: right;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100lvw;
+  font-family: Poppins;
+  animation: slide 50s infinite;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column-reverse;
+  height: 100lvh;
+  transition: 2s;
 }
 
 .slider .slides .slide img {
@@ -116,7 +215,9 @@ nav a {
   position: relative;
   display: flex;
 
-  padding-top: 6rem;
+  padding-top: 5rem;
+  padding-top: 10%;
+
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -126,13 +227,11 @@ nav a {
 .black-cover {
   display: flex;
   width: 100vw;
-
   height: 100vh;
   background-color: #00000083;
   flex-direction: column-reverse;
   justify-content: left;
   align-items: left;
-  /* padding: 4rem; */
   margin-top: -3rem;
 }
 
@@ -142,8 +241,8 @@ nav a {
 }
 
 .text-info {
-  word-wrap: break-word;
-  max-width: 1000px;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .container > .text-info > h4 {
@@ -269,9 +368,6 @@ nav a {
   cursor: pointer;
   margin: auto;
   transition: 1s;
-  /* position: absolute; */
-  /* bottom: 4; */
-  /* margin-left: 50%; */
 }
 
 .manual-btn:not(:last-child) {
@@ -300,6 +396,22 @@ nav a {
 
 #radio5:checked ~ .first {
   margin-left: -80%;
+}
+
+.tab-lap {
+  width: fit-content;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  border: 1px solid black;
+  background-color: white;
+  color: black;
+  font-family: Fredoka;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 5px;
 }
 
 .navigation-auto {
@@ -343,7 +455,261 @@ nav a {
   background: green;
 }
 
-@media screen and (min-width: 200px) and (max-width: 600px) {
+.about {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: Poppins;
+  width: 100lvw;
+
+  animation: slide 50s infinite;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  transition: 2s;
+}
+
+.about .black h2 {
+  font-size: 2rem;
+  font-family: Fredoka;
+  text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white,
+    1px 1px 0 white;
+}
+
+.about .black {
+  background-color: rgba(0, 0, 0, 0.091);
+  width: 100vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.about .black .about-info {
+  padding: 1rem;
+  font-family: Fredoka;
+  font-size: 1rem;
+  margin-top: -1rem;
+}
+
+article {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: left;
+  align-items: left;
+}
+
+.image-sample {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #ccc;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.image-sample img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.shop-button a {
+  width: fit-content;
+  height: 1rem;
+  text-decoration: none;
+  padding: 1rem;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  font-family: Fredoka;
+  background-color: #000000;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.last-section {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: Poppins;
+  width: 100lvw;
+  background-image: url(./images/icon4.0.png);
+  animation: slide 50s infinite;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  transition: 0.5s;
+}
+
+.last-section div {
+  padding: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+form button {
+  width: fit-content;
+  height: 3rem;
+  padding: 1rem;
+  border: 1px solid;
+  border-radius: 5px;
+  font-family: Fredoka;
+  background-color: #000000;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+input {
+  font-family: Fredoka;
+  font-size: 1rem;
+  height: 2rem;
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 5px;
+  border: none;
+  padding: 1rem;
+  outline: 1px solid black;
+}
+
+footer {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: Poppins;
+  width: 100lvw;
+  background-image: url(./images/abstract-blur-supermarket-department-store_1203-8782.avif);
+  animation: slide 50s infinite;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  transition: 0.5s;
+}
+
+footer .foot-info {
+  background-color: #000000d6;
+  aspect-ratio: 2/2;
+  justify-content: center;
+  align-items: left;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+.first-foot-section {
+  display: block;
+  margin: 0%;
+  padding: 1rem;
+}
+.first-foot-section div h2 {
+  font-size: 1.5rem;
+  font-family: Fredoka;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+}
+
+.first-foot-section div {
+  display: flex;
+  margin: 0%;
+  padding: 0%;
+  margin-left: -1rem;
+  flex-direction: row;
+  justify-content: left;
+  align-items: left;
+}
+
+.first-foot-section p {
+  font-family: Fredoka;
+  font-weight: 500;
+  color: white;
+  margin-top: -1rem;
+}
+
+.first-foot-section div img {
+  width: 4rem;
+}
+
+.second-foot-info {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.second-foot-info div {
+  display: block;
+}
+
+.second-foot-info div h5 {
+  font-size: 1.5rem;
+  font-family: Fredoka;
+  color: white;
+}
+
+.second-foot-info div p {
+  display: flex;
+  margin-left: -1rem;
+  flex-direction: column;
+  gap: 0;
+  margin-top: -1rem;
+}
+
+.second-foot-info div a {
+  width: fit-content;
+  padding: 1rem;
+  text-decoration: none;
+
+  font-family: Fredoka;
+
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.last-info-foot-section div h5 {
+  font-size: 1.5rem;
+  font-family: Fredoka;
+  color: white;
+}
+
+.social-icons {
+  display: flex;
+  flex-direction: row;
+  margin-top: -1.5rem;
+}
+
+.facebook {
+  color: #0b43bc;
+}
+
+.twitter {
+  color: white;
+}
+
+.github {
+  color: #ffffff;
+}
+
+.copy {
+  font-family: Fredoka;
+  font-size: 0.5rem;
+  color: white;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 100px) and (max-width: 768px) {
   body {
     background-color: rgb(255, 255, 255);
     background-position: center;
@@ -539,6 +905,10 @@ nav a {
     gap: 0;
   }
 
+  .tab-lap {
+    display: none;
+  }
+
   .container .text-info {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -566,15 +936,6 @@ nav a {
   }
 
   .navigation-manual {
-    /* position: absolute;
-    width: 10px;
-    margin-left: 10rem;
-    gap: 1rem;
-    /* margin-top: 30rem; */
-    /* display: flex;
-    margin-left: 50vw;
-    justify-content: center; */
-
     position: relative;
     width: 10px;
     margin-top: 100vw;
@@ -711,7 +1072,7 @@ nav a {
   }
 
   .image-sample {
-    width: 100%; /* or any % of its parent */
+    width: 100%;
     aspect-ratio: 1 / 1;
     background: #ccc;
     border: 1px solid #ffffff;
@@ -840,6 +1201,10 @@ nav a {
     align-items: left;
   }
 
+  .dropdown-toggle svg {
+    display: block;
+  }
+
   .first-foot-section p {
     font-family: Fredoka;
     font-weight: 500;
@@ -918,3 +1283,994 @@ nav a {
     font-weight: 500;
   }
 }
+
+@media screen and (min-width: 768px) and (max-width: 840px) {
+  body {
+    background-color: rgb(255, 255, 255);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  header {
+    background-color: #00000035;
+  }
+
+  .dropdown {
+    color: rgb(221, 13, 13);
+    transition: 2s;
+
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-toggle {
+    padding: 10px 16px;
+    transition: 2s;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: Fredoka;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .dropdown-toggle svg {
+    display: none;
+  }
+
+  .dropdown-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    text-align: center;
+    top: 110%;
+    transition: 2s;
+    right: 0%;
+    background-color: transparent;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .dropdown-menu a {
+    display: block;
+    padding-left: 10rem;
+    transition: 2s;
+    text-decoration: none;
+    color: #2c2c2c;
+    background: none;
+    transition: 2s;
+  }
+
+  .dropdown-menu a:hover {
+    background-color: #fff2dc;
+  }
+
+  .dropdown.open .dropdown-menu {
+    display: block;
+  }
+
+  .start-buttons {
+    margin-top: 10rem;
+    display: flex;
+    padding: 5rem;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .start-buttons button {
+    width: 100%;
+    background-color: transparent;
+    border: solid 2px rgb(3, 3, 3);
+    border-radius: 3rem;
+    font-family: Fredoka;
+    color: white;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+      1px 1px 0 black;
+    -webkit-text-stroke: 1px black;
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 1rem;
+  }
+
+  .sliderr {
+    background-image: url(./images/electronics/wireless-earbuds-with-neon-cyberpunk-style-lighting_23-2151074300.avif);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100lvw;
+    gap: 1rem;
+    font-family: Poppins;
+    animation: slide 90s infinite;
+    display: flex;
+    flex-direction: column-reverse;
+    height: 100lvh;
+    transition: 2s;
+  }
+
+  .slid {
+    background-image: url(./images/fashion/spring-wardrobe-switch-still-life_23-2150176696.avif);
+    background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100lvw;
+    font-family: Poppins;
+    animation: slide 50s infinite;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column-reverse;
+    height: 100lvh;
+    transition: 2s;
+  }
+
+  .slyds {
+    background-image: url(./images/stationaeries/still-life-office-chair-indoors_23-2151108727.avif);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Poppins;
+    width: 100lvw;
+    gap: 1rem;
+    animation: slide 50s infinite;
+    display: flex;
+    flex-direction: column-reverse;
+    height: 100lvh;
+    transition: 2s;
+  }
+
+  .slyde {
+    background-image: url(./images/stationaeries/black-electric-mixer-table_140725-7494.avif);
+    background-position: center;
+    animation: slide 50s infinite;
+    background-size: cover;
+    font-family: Poppins;
+    background-repeat: no-repeat;
+    width: 100lvw;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column-reverse;
+    height: 100lvh;
+    transition: 2s;
+  }
+
+  .slyd {
+    background-image: url(./images/stationaeries/top-view-back-school-stationery-with-pencils_23-2148587538.avif);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Poppins;
+    width: 100lvw;
+    gap: 1rem;
+    animation: slide 50s infinite;
+    display: flex;
+    flex-direction: column-reverse;
+    height: 100lvh;
+    transition: 2s;
+  }
+
+  .dropdown {
+    display: o;
+  }
+
+  nav a {
+    display: none;
+  }
+
+  .left-section > img {
+    width: 4rem;
+  }
+
+  .left-section > h1 {
+    font-family: Fredoka;
+    font-size: 1.5rem;
+    color: rgb(255, 255, 255);
+  }
+
+  .left-section {
+    display: flex;
+    font-family: Fredoka;
+    flex-direction: row;
+    gap: 0;
+  }
+
+  .container .text-info {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .container .text-info p {
+    margin: 0 auto;
+    font-size: 1rem;
+  }
+
+  .tab-lap {
+    width: fit-content;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+    font-family: Fredoka;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 5px;
+  }
+
+  .container .text-info h4 {
+    font-size: 2rem;
+  }
+
+  .container a {
+    border-radius: 5rem;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30%;
+  }
+
+  .about {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Poppins;
+    width: 100lvw;
+
+    animation: slide 50s infinite;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    transition: 2s;
+  }
+
+  .about .black h2 {
+    font-size: 2rem;
+    font-family: Fredoka;
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white,
+      1px 1px 0 white;
+  }
+
+  .about .black {
+    background-color: rgba(0, 0, 0, 0.091);
+    width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .about .black .about-info {
+    padding: 1rem;
+    font-family: Fredoka;
+    font-size: 1rem;
+    margin-top: -1rem;
+  }
+
+  article {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: left;
+    align-items: left;
+  }
+
+  .image-sample {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: #ccc;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  .image-sample img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .shop-button a {
+    width: fit-content;
+    height: 1rem;
+    text-decoration: none;
+    padding: 1rem;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    font-family: Fredoka;
+    background-color: #000000;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .last-section {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Poppins;
+    width: 100lvw;
+    background-image: url(./images/icon4.0.png);
+    animation: slide 50s infinite;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    transition: 0.5s;
+  }
+
+  .last-section div {
+    padding: 1rem;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  form button {
+    width: fit-content;
+    height: 3rem;
+    padding: 1rem;
+    border: 1px solid;
+    border-radius: 5px;
+    font-family: Fredoka;
+    background-color: #000000;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  input {
+    font-family: Fredoka;
+    font-size: 1rem;
+    height: 2rem;
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 5px;
+    border: none;
+    padding: 1rem;
+    outline: 1px solid black;
+  }
+
+  footer {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Poppins;
+    width: 100lvw;
+    background-image: url(./images/abstract-blur-supermarket-department-store_1203-8782.avif);
+    animation: slide 50s infinite;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    transition: 0.5s;
+  }
+
+  footer .foot-info {
+    background-color: #000000d6;
+    aspect-ratio: 2/2;
+    justify-content: center;
+    align-items: left;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+  }
+  .first-foot-section {
+    display: block;
+    margin: 0%;
+    padding: 1rem;
+  }
+  .first-foot-section div h2 {
+    font-size: 1.5rem;
+    font-family: Fredoka;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+  }
+
+  .first-foot-section div {
+    display: flex;
+    margin: 0%;
+    padding: 0%;
+    margin-left: -1rem;
+    flex-direction: row;
+    justify-content: left;
+    align-items: left;
+  }
+
+  .first-foot-section p {
+    font-family: Fredoka;
+    font-weight: 500;
+    color: white;
+    margin-top: -1rem;
+  }
+
+  .first-foot-section div img {
+    width: 4rem;
+  }
+
+  .second-foot-info {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .second-foot-info div {
+    display: block;
+  }
+
+  .second-foot-info div h5 {
+    font-size: 1.5rem;
+    font-family: Fredoka;
+    color: white;
+  }
+
+  .second-foot-info div p {
+    display: flex;
+    margin-left: -1rem;
+    flex-direction: column;
+    gap: 0;
+    margin-top: -1rem;
+  }
+
+  .second-foot-info div a {
+    width: fit-content;
+    padding: 1rem;
+    text-decoration: none;
+
+    font-family: Fredoka;
+
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .last-info-foot-section div h5 {
+    font-size: 1.5rem;
+    font-family: Fredoka;
+    color: white;
+  }
+
+  .social-icons {
+    display: flex;
+    flex-direction: row;
+    margin-top: -1.5rem;
+  }
+
+  .facebook {
+    color: #0b43bc;
+  }
+
+  .twitter {
+    color: white;
+  }
+
+  .github {
+    color: #ffffff;
+  }
+
+  .copy {
+    font-family: Fredoka;
+    font-size: 0.5rem;
+    color: white;
+    font-weight: 500;
+  }
+}
+
+/* @media screen and (min-width: 840px) and (max-width: 1024px) { */
+/* body {
+    background-color: rgb(255, 255, 255);
+  }
+
+  header {
+    background-color: #00000035;
+  }
+
+  .dropdown {
+    color: rgb(221, 13, 13);
+    transition: 2s;
+
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-toggle {
+    padding: 10px 16px;
+    transition: 2s;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: Fredoka;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .dropdown-toggle svg {
+    display: none;
+  }
+
+  .dropdown-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    text-align: center;
+    top: 110%;
+    transition: 2s;
+    right: 0%;
+    background-color: transparent;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .dropdown-menu a {
+    display: block;
+    padding-left: 10rem;
+    transition: 2s;
+    text-decoration: none;
+    color: #2c2c2c;
+    background: none;
+    transition: 2s;
+  }
+
+  .dropdown-menu a:hover {
+    background-color: #fff2dc;
+  }
+
+  .dropdown.open .dropdown-menu {
+    display: block;
+  }
+
+  .start-buttons {
+    margin-top: 10rem;
+    display: flex;
+    padding: 5rem;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .start-buttons button {
+    width: 100%;
+    background-color: transparent;
+    border: solid 2px rgb(3, 3, 3);
+    border-radius: 3rem;
+    font-family: Fredoka;
+    color: white;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+      1px 1px 0 black;
+    -webkit-text-stroke: 1px black;
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 1rem;
+  }
+
+  .sliderr {
+    background-image: url(./images/electronics/wireless-earbuds-with-neon-cyberpunk-style-lighting_23-2151074300.avif);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100lvw;
+    gap: 1rem;
+    font-family: Poppins;
+    animation: slide 90s infinite;
+    display: flex;
+    flex-direction: column-reverse;
+    height: 100lvh;
+    transition: 2s;
+  }
+
+  .slid {
+    background-image: url(./images/fashion/spring-wardrobe-switch-still-life_23-2150176696.avif);
+    background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100lvw;
+    font-family: Poppins;
+    animation: slide 50s infinite;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column-reverse;
+    height: 100lvh;
+    transition: 2s;
+  }
+
+  .slyds {
+    background-image: url(./images/stationaeries/still-life-office-chair-indoors_23-2151108727.avif);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Poppins;
+    width: 100lvw;
+    gap: 1rem;
+    animation: slide 50s infinite;
+    display: flex;
+    flex-direction: column-reverse;
+    height: 100lvh;
+    transition: 2s;
+  }
+
+  .slyde {
+    background-image: url(./images/stationaeries/black-electric-mixer-table_140725-7494.avif);
+    background-position: center;
+    animation: slide 50s infinite;
+    background-size: cover;
+    font-family: Poppins;
+    background-repeat: no-repeat;
+    width: 100lvw;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column-reverse;
+    height: 100lvh;
+    transition: 2s;
+  }
+
+  .slyd {
+    background-image: url(./images/stationaeries/top-view-back-school-stationery-with-pencils_23-2148587538.avif);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Poppins;
+    width: 100lvw;
+    gap: 1rem;
+    animation: slide 50s infinite;
+    display: flex;
+    flex-direction: column-reverse;
+    height: 100lvh;
+    transition: 2s;
+  }
+
+  .dropdown {
+    display: o;
+  }
+
+  nav a {
+    display: none;
+  }
+
+  .left-section > img {
+    width: 4rem;
+  }
+
+  .left-section > h1 {
+    font-family: Fredoka;
+    font-size: 1.5rem;
+    color: rgb(255, 255, 255);
+  }
+
+  .left-section {
+    display: flex;
+    font-family: Fredoka;
+    flex-direction: row;
+    gap: 0;
+  }
+
+  .container .text-info {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .container .text-info p {
+    margin: 0 auto;
+    font-size: 1rem;
+  }
+
+  .tab-lap {
+    width: fit-content;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+    font-family: Fredoka;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 5px;
+  }
+
+  .container .text-info h4 {
+    font-size: 2rem;
+  }
+
+  .container a {
+    border-radius: 5rem;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30%;
+  }
+
+  .about {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Poppins;
+    width: 100lvw;
+
+    animation: slide 50s infinite;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    transition: 2s;
+  }
+
+  .about .black h2 {
+    font-size: 2rem;
+    font-family: Fredoka;
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white,
+      1px 1px 0 white;
+  }
+
+  .about .black {
+    background-color: rgba(0, 0, 0, 0.091);
+    width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .about .black .about-info {
+    padding: 1rem;
+    font-family: Fredoka;
+    font-size: 1rem;
+    margin-top: -1rem;
+  }
+
+  article {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: left;
+    align-items: left;
+  }
+
+  .image-sample {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: #ccc;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  .image-sample img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .shop-button a {
+    width: fit-content;
+    height: 1rem;
+    text-decoration: none;
+    padding: 1rem;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    font-family: Fredoka;
+    background-color: #000000;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .last-section {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Poppins;
+    width: 100lvw;
+    background-image: url(./images/icon4.0.png);
+    animation: slide 50s infinite;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    transition: 0.5s;
+  }
+
+  .last-section div {
+    padding: 1rem;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  form button {
+    width: fit-content;
+    height: 3rem;
+    padding: 1rem;
+    border: 1px solid;
+    border-radius: 5px;
+    font-family: Fredoka;
+    background-color: #000000;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  input {
+    font-family: Fredoka;
+    font-size: 1rem;
+    height: 2rem;
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 5px;
+    border: none;
+    padding: 1rem;
+    outline: 1px solid black;
+  }
+
+  footer {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Poppins;
+    width: 100lvw;
+    background-image: url(./images/abstract-blur-supermarket-department-store_1203-8782.avif);
+    animation: slide 50s infinite;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    transition: 0.5s;
+  }
+
+  footer .foot-info {
+    background-color: #000000d6;
+    aspect-ratio: 2/2;
+    justify-content: center;
+    align-items: left;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+  }
+  .first-foot-section {
+    display: block;
+    margin: 0%;
+    padding: 1rem;
+  }
+  .first-foot-section div h2 {
+    font-size: 1.5rem;
+    font-family: Fredoka;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+  }
+
+  .first-foot-section div {
+    display: flex;
+    margin: 0%;
+    padding: 0%;
+    margin-left: -1rem;
+    flex-direction: row;
+    justify-content: left;
+    align-items: left;
+  }
+
+  .first-foot-section p {
+    font-family: Fredoka;
+    font-weight: 500;
+    color: white;
+    margin-top: -1rem;
+  }
+
+  .first-foot-section div img {
+    width: 4rem;
+  }
+
+  .second-foot-info {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .second-foot-info div {
+    display: block;
+  }
+
+  .second-foot-info div h5 {
+    font-size: 1.5rem;
+    font-family: Fredoka;
+    color: white;
+  }
+
+  .second-foot-info div p {
+    display: flex;
+    margin-left: -1rem;
+    flex-direction: column;
+    gap: 0;
+    margin-top: -1rem;
+  }
+
+  .second-foot-info div a {
+    width: fit-content;
+    padding: 1rem;
+    text-decoration: none;
+
+    font-family: Fredoka;
+
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .last-info-foot-section div h5 {
+    font-size: 1.5rem;
+    font-family: Fredoka;
+    color: white;
+  }
+
+  .social-icons {
+    display: flex;
+    flex-direction: row;
+    margin-top: -1.5rem;
+  }
+
+  .facebook {
+    color: #0b43bc;
+  }
+
+  .twitter {
+    color: white;
+  }
+
+  .github {
+    color: #ffffff;
+  }
+
+  .copy {
+    font-family: Fredoka;
+    font-size: 0.5rem;
+    color: white;
+    font-weight: 500;
+  }
+} */
